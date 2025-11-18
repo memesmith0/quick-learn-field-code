@@ -1,3 +1,4 @@
+#john morris beck 2025 - gplv2 - see gnu.org for license - https://github.com/memesmith0 - https://thefastscrolls.neocities.org
 BEGIN{
 printf "function add(x,y){ printf \"( %s + %s )\" x , y }\\n"
 printf "function sub(x,y){ printf \"( %s - %s )\" x , y }\\n"
