@@ -33,8 +33,6 @@ printf "function mod(x,y){ return  x  %% \" y \" }\n";
 printf "function not(x){ return \"( !x \" }\n";
 printf "function display(x){ printf  x }\n";
 printf "function concat(x,y){ return x y }\n";
-#printf "function assign(x,y){ return x=y; }\n"
-#printf "function access(x,y){ return x \"[\\\"\" y \"\\\"]\" }\n"
 }
 {print $0}
 END{
