@@ -59,6 +59,18 @@
             i++;
             continue; 
         }
+	        if (in_string == 0 && c == "=") {
+            # If we are not in a string, and we see an '=', check the next character.
+            c2 = substr($0, i + 1, 1);
+            if (c2 == "=") {
+                # Found "==" outside of a string, which is illegal.
+                print "error";
+                error_found = 1;
+		print "awk_compiler_trap_error_invalid_syntax_!#%";
+                break; # Exit the character loop
+            }
+            # If it was just a single '=', the loop will continue to the next character as usual.
+        }
 
         # 5. Handle Illegal Characters (ONLY when NOT in a string)
         if (in_string == 0) {
@@ -72,6 +84,7 @@
                 # Illegal character found, immediately halt and set error flag
                 print "error";
                 error_found = 1;
+		print "awk_compiler_trap_error_invalid_syntax_!#%";
                 break; # Exit the character loop
             }
         }
