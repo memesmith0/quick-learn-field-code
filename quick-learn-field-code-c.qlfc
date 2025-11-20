@@ -1,0 +1,67 @@
+#john morris beck 2025 - gplv2 - see gnu.org for license - https://github.com/memesmith0 - https://thefastscrolls.neocities.org
+#jysytem.qlfl
+#this is a system for quick-learn-field-language that adds a c compiler
+#from the quick learn field language to c, that has the exact same performance
+#as c - no more, no less. it is just another notation for c.
+function include(x){return "#include " x "\n"}
+fucntion arg(x,y){return x ", " y}
+function call(name,args){return name "( " args " )"}
+function brace(x){return "{ " x " }"}
+function function_call(name,args,body){return concat(call(name,args),brace(body))}
+function define(name,args,definition){return "#define " call(name,args) " " definition "\n"}
+function type(t,v){return t v}
+function line(x){ return x ";"}
+function decide(args,body){return function_call("if",args,body)}
+function else_decide(args,body){return function_call("else if",args,body)}
+function otherwise(body){return "else{ " body " }"}
+function c_add(x,y){return "( " x " + " y " )"}
+function c_sub(x,y){return "( " x " - " y " )"}
+function c_mult(x,y){return "( " x " * " y " )"}
+function c_div(x,y){return "( " x " / " y " )"}
+function c_mod(x,y){return "( " x " % " y " )"}
+function c_bshift_l(x,y){return "( " x " << " y " )"}
+function c_bshift_r(x,y){reurn "( " x " >> " y " )"}
+function c_not(x,y){return "( !" x " )"}
+function c_negate(x,y){return "( -" x " )"}
+function c_or(x,y){return "( " x " || " y " )"}
+function c_less(x,y){return "( " x " < " y " )"}
+function c_greater(x,y){return "( " x " > " y " )"}
+function c_leq(x,y){return "( " x " <= " y " )"}
+function c_geq(x,y){return "( " x " >= " y " )"}
+function c_and(x,y){return "( " x " && " y " )"}
+function c_not_equal(x,y){return "( " x " != " y " )"}
+function c_equal(x,y){return "( " x " == " y " )"}
+function c_b_or(x,y){return "( " x " | " y " )"}
+function c_b_and(x,y){return "( " x " & " y " )"}
+function c_b_xor(x,y){return "( " x " ^ " y " )"}
+function struct(name, body, tail){ return  "struct "  name brace(body) tail ";"}
+function enum(name,body){return "enum " name " " body ";"}
+function reference(x){return "&" x}
+function assign(x,y){return x "=" y}
+function float_suffix(x){return x "f"}
+function char_literal(x){return "'" x "'"
+function post_increment(x){return x "++"}
+function post_decrement(x){return x "--"}
+function pre_increment(x){return "++" x}
+function pre_decrement(x){return "--" x}
+function access(x,y){return x "[" y "]"}
+function c_string(x,y){return "\"" x "\""}
+function ternary(x,y,z){return x " ? " y " : " z}
+function case(x,body){return "case " x ": " body};
+function default(body){return "default: " body};
+function c_break(){ return "break;"}
+function c_continue(){ return "continue;"}
+function label(name){ return name ": "}
+funtion goto(name){ return name }
+function c_return(x){return "return " x}
+function cast(type,data){return "( ( " type " ) " data " )"}
+function dereference(x){return "( *( " x " ) )"}
+#need to implement typedef
+function initialize_struct(name,type){return "struct " name " " type}
+function dot(x,y){return x "." y}
+function arrow(x,y){return x "->" y}
+function inline_c(x,y,z){return x y z};
+#need to defien stuff like ifdef and ifndef and all tha
+#function main(){
+#your code goes here
+#}
