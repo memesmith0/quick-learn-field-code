@@ -68,7 +68,7 @@
             # This POSIX ERE pattern matches allowed characters. 
             # The '!' checks if the character is NOT one of the allowed ones.
             # Using c !~ /[a-z0-9_{}(), ]/ for brevity, POSIX supports [a-z0-9] ranges.
-            if (c !~ /[a-z0-9_\{\}\,\)\( ]/) {
+            if (c !~ /[a-z0-9_\{\},\,,\;,\t,\],\[,=,\)\( ]/) {
                 # Illegal character found, immediately halt and set error flag
                 print "error";
                 error_found = 1;
