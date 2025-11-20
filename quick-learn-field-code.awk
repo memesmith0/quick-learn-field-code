@@ -18,22 +18,5 @@
 #design of this language. if the user, say a student or a military personnel, wants to use that extended syntax, they should be instructed to use regular awk,
 #and not this system, and they are likely a more advanced user. the code that they generate in awk will not likely be readable to their superior, like this.
 #furthermore, in this language the ordinary awk command is accessable through a function called system().
-BEGIN{
-printf "function add(x,y){ return  x + y }\n";
-printf "function minus(x,y){ return  x - y  }\n";
-printf "function mult(x,y){ return  x * y  }\n";
-printf "function div(x,y){ return  x / y  }\n";
-printf "function pow(x,y){ return  x ^ y  }\n";
-printf "function less(x,y){ return  x  < \" y \" }\n";
-printf "function equal(x,y){ return  x  ==  y }\n";
-printf "function or(x,y){ return  x || y  }\n";
-printf "function mod(x,y){ return  x  %%  y  }\n";
-printf "function not(x){ return !x  }\n";
-printf "function display(x){ printf  x }\n";
-printf "function concat(x,y){ return x y }\n";
-}
-{print $0}
-END{
-printf "END{main()}\n"
-}
-
+#BEGIN{print "function add(x,y){return x + y}function minus(x,y){return x-y}function mult(x,y){return x * y }function div(x,y){return x / y }function pow(x,y){return x ^ y }function less(x,y){return x  < \" y \"}function equal(x,y){return x  ==  y}function or(x,y){return x || y }function mod(x,y){return x  %  y }function not(x){return !x }function display(x){ printf  x}function concat(x,y){return x y }"}{print $0}END{print "END{main()}"}
+BEGIN{print "function add(x,y){return x+y}function minus(x,y){return x-y}function mult(x,y){return x*y}function div(x,y){return x/y}function pow(x,y){return x^y}function less(x,y){return x<y}function equal(x,y){return x==y}function or(x,y){return x||y}function mod(x,y){return x%y}function not(x){return !x}function display(x){printf x}function concat(x,y){return x y}"}{print $0}END{print "END{main()}"}
