@@ -19,18 +19,16 @@
 #and not this system, and they are likely a more advanced user. the code that they generate in awk will not likely be readable to their superior, like this.
 #furthermore, in this language the ordinary awk command is accessable through a function called system().
 BEGIN{
-
-
 printf "function add(x,y){ return  x + y }\n";
 printf "function minus(x,y){ return  x - y  }\n";
 printf "function mult(x,y){ return  x * y  }\n";
 printf "function div(x,y){ return  x / y  }\n";
 printf "function pow(x,y){ return  x ^ y  }\n";
 printf "function less(x,y){ return  x  < \" y \" }\n";
-printf "function equal(x,y){ return  x  == \" y \" }\n";
-printf "function or(x,y){ return  x || \" y \" }\n";
-printf "function mod(x,y){ return  x  %% \" y \" }\n";
-printf "function not(x){ return \"( !x \" }\n";
+printf "function equal(x,y){ return  x  ==  y }\n";
+printf "function or(x,y){ return  x || y  }\n";
+printf "function mod(x,y){ return  x  %%  y  }\n";
+printf "function not(x){ return !x  }\n";
 printf "function display(x){ printf  x }\n";
 printf "function concat(x,y){ return x y }\n";
 }
